@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Color Scheme Generator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+        <script src="generator.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <header>
+                    <h1>Color Scheme <strong>Generator</strong></h1>
+                    <p>Generate an awesome color palette to complement your chosen hue.</p>
+                    <form>
+                        <label id="color-seed-container"><span class="color-code"></span><span title="Color">Color Picker </span><input type="color" id="color-seed"></label>
+                        <select id="color-scheme" title="Mode">
+                            <option value="monochrome">Monochrome</option>
+                            <option value="monochrome-light">Monochrome-light</option>
+                            <option value="analogic">Analogic</option>
+                            <option value="complement">Complement</option>
+                            <option value="analogic-complement">Analogic-complement</option>
+                            <option value="triad">Triad</option>
+                        </select>
+                        <button id="save-color-scheme" title="Collect"><i class="fi fi-rr-bookmark"></i></button>
+                    </form>
+                </header>
+                <section id="colors">
+
+                </section>
+                <section id="saved-color-schemes">
+                </section>
+                <footer>
+                    <button id="clear-saved-schemes">Clear Schemes</button>
+                </footer>
+            </div>
+        </main>
+    </body>
+</html>

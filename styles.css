@@ -1,0 +1,211 @@
+:root {
+    --color-borders: #D1D5DB;
+    --color-text: #2B283A;
+    --color-page-background: #222222;
+    
+    --font: Inter, sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Structure */
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  background-color: var(--color-page-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header {
+    padding: 0 1em;
+}
+
+main {
+    width: 95%;
+    max-width: 680px;
+    padding: 1em;
+    background: white;
+    background: linear-gradient(45deg, rgb(200 200 200) 0%, rgba(255,255,255,1) 6%, rgba(255,255,255,1) 94%, rgba(200,200,200,1) 100%);
+    height: auto;
+    border-radius: 1em;
+}
+
+/* Typography */
+body, input, select {
+    font-family: var(--font);
+    line-height: 1.125;  
+    font-size: 1em;
+}
+
+h1 {
+    font-weight: black;
+    color: #777;
+    font-size: 3em;
+    line-height: 1;
+}
+
+h1 strong {
+    color: #000000;
+    font-size: 2em;
+    margin-left: -4px;
+}
+
+/* Controls */
+
+#color-seed-container, select, button {
+    cursor: pointer;
+    border-radius: .375rem;
+    border: solid 1px var(--color-borders);
+}
+
+form {
+    padding: 1em 0;
+    display: flex;
+    gap: .75em;
+}
+
+#color-seed-container {
+    height: 3em;
+    width: 4em;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#color-seed-container * {
+    opacity: 0;
+}
+
+#color-seed-container .color-code {
+    display: block;
+    color: white;
+    font-size: .75em;
+    position: absolute;
+    font-weight: bold;
+    transition: opacity .2s;
+}
+
+#color-seed-container:hover .color-code {
+    opacity: 100;
+}
+
+select {
+    flex-grow: 1;
+    padding: 0 .75em;
+
+}
+
+button {
+    font-size: 1.5em;
+    background: transparent;
+    border: none;
+}
+
+/* Color Scheme Display */
+
+#colors {
+    display: flex;
+    padding: 1em;
+}
+
+.color-container {
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.color-container:first-of-type .color {
+    border-radius: .5em 0 0 .5em;
+}
+
+.color-container:last-of-type .color {
+    border-radius: 0 .5em .5em 0;
+}
+
+.color-container:hover {
+    transform: scale(1.05);
+}
+
+.color-container:hover, .color-container:hover .color {
+    border-radius: .5em;
+}
+
+.color-container:active {
+    transform: scale(1.025);
+}
+
+.color {
+    height: 300px;
+    transition: all .1s;
+}
+
+.color-container .color-code {
+    font-size: .75em;
+    margin: .5em auto;
+    padding: .5em;
+    background-color: white;
+    transition: background-color .1s;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: block;
+    border-radius: .5em;
+}
+
+.color-container:active .color-code {
+    background-color: lightgoldenrodyellow;
+    font-weight: bold;
+}
+
+/* Saved Schemes */
+
+#saved-color-schemes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+    justify-content: center;
+}
+
+.saved-scheme {
+    height: 60px;
+    width: 60px;
+    border-radius: .5em;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.saved-scheme:hover {
+    transform: scale(1.05);
+}
+
+.saved-scheme:active {
+    transform: scale(1.025);
+}
+
+.color-container:active .color-code:after {
+    content: ' Copied!';
+}
+
+.saved-scheme-color {
+    height: 100%;
+    width: 20%;
+}
+
+#clear-saved-schemes {
+    font-size: .75rem;
+    margin: 0 0 0 auto;
+    text-align: center;
+    display: block;
+}
